@@ -21,13 +21,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
         name: Checkout current repo
-
+        with:
+         path: hello_world
+         
       - uses: actions/checkout@v4
         name: checkout another repo
         with:
           repository: Kumar-arj/github-actions-lab1-q1
           token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
-          # path: my-tools
+          path: lab1-q1
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
